@@ -49,7 +49,7 @@ No Claude Code, os comandos estão no README.
 - Se for uma nova rodada, compare com a anterior e diga o que mudou no site.
 
 ### 2. Diagnóstico
-1. **Playwright.** Abra o site e tire prints em **1440, 768 e 375px**, salvos em `refine-this/antes/<pagina>-<largura>.png`. Anote:
+1. **Playwright.** Abra o site e capture em **1440, 768 e 375px**, usando o método abaixo. Salve em `refine-this/antes/<pagina>-<largura>-<parte>.png`. Anote:
    - hierarquia visual
    - contraste (WCAG AA: 4,5:1 para texto normal, 3:1 para texto grande)
    - espaçamento, tipografia e alinhamento
@@ -61,6 +61,12 @@ No Claude Code, os comandos estão no README.
    - erros no console
    - requisições que falham
    - tempo até o conteúdo aparecer
+   **Método de captura (vale para antes e depois):**
+   - Role a página até o fim em passos de cerca de 60% da altura da tela, esperando 1,2 segundo em cada passo. Passos maiores ou rápidos não disparam as animações de entrada e deixam seções em branco. Não tire print completo: em páginas longas, sobretudo no celular, ele falha.
+   - Depois da rolagem, confirme que nenhum bloco de texto visível tem opacidade 0. Se tiver, pare sobre ele e espere mais 1 segundo. Blocos com opacidade 0 fora da tela não contam.
+   - Espere contadores e animações terminarem antes de ler ou anotar números.
+   - Tire prints por partes da altura da tela (topo, meio e fim, no mínimo), em sequência.
+   - **Teste de teclado:** pressione Tab várias vezes e confirme, visualmente, que cada foco aparece na ordem lógica. Não basta checar o estilo CSS.
 2. **unslop.** Rode a auditoria do unslop (etapas "Look" e "Audit" dele) para listar os padrões genéricos que existem hoje.
 3. **Leis de UX.** Avalie o site com as 12 leis de [references/leis-ux.md](references/leis-ux.md), usando as perguntas de lá.
 4. **Checklist de "pronto".** Marque o que já existe e o que falta (ver [references/regras.md](references/regras.md)).
@@ -87,7 +93,7 @@ No máximo 5 mudanças por rodada. Faça uma pergunta de múltipla escolha para 
 3. Siga a ordem de passes do unslop (espaçamento, cor, ícones, texto, tipografia, layout, detalhes, visuais, movimento) dentro do que foi aprovado.
 4. Valide cada mudança aplicada:
    - **Repita os critérios afetados.** Se a mudança tocou botões, repita alvo de toque, contraste e teclado. Se tocou formulário ou erro, repita rótulos e mensagens de erro. Se tocou layout, repita os 3 tamanhos.
-   - **Playwright:** prints **depois** nas 3 larguras em `refine-this/depois/`, console sem erros novos, links e interações principais funcionando.
+   - **Playwright:** prints **depois** nas 3 larguras em `refine-this/depois/`, com o mesmo método de captura do diagnóstico; console sem erros novos; links e interações principais funcionando.
    - **Checks do projeto:** se existirem scripts de lint, typecheck, testes ou build (no `package.json` ou equivalente), rode os que se aplicam e registre o resultado de cada um, inclusive as falhas.
    - Sem ferramenta para algum check, marque como "não executado". Nunca como "passou".
 5. Confira se o resultado continua fiel ao pedido original. Se divergir, avise e proponha a correção no formato da etapa 4.
