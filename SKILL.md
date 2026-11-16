@@ -1,6 +1,6 @@
 ---
 name: refine-this
-description: Melhora o design e a UX/UI de um site existente sem deixar cara de template ou de "design de IA". Avalia o site pelas 12 leis de UX, roda a skill unslop, consulta a documentação atual pelo Context7, valida cada mudança com o Playwright em desktop, tablet e celular, e só altera algo depois que o usuário aprova. Use quando pedirem para refinar, polir, revisar ou melhorar o design, a UX ou a UI de um site ou landing page.
+description: Melhora o design e a UX/UI de um site existente sem deixar cara de template ou de "design de IA". Avalia o site pelas 12 leis de UX, roda a skill unslop, consulta a documentação atual pelo Context7, valida cada mudança com o Playwright em desktop, tablet e celular, e só altera algo depois que o usuário aprova. Funciona também sem essas dependências. Use quando pedirem para refinar, polir, revisar ou melhorar o design, a UX ou a UI de um site ou landing page.
 ---
 
 # refine-this
