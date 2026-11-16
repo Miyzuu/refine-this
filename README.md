@@ -66,7 +66,7 @@ A skill trabalha nesta ordem:
 2. Resume o seu pedido e faz até 5 perguntas sobre o negócio.
 3. Faz o diagnóstico: prints, acessibilidade, unslop, 12 leis de UX e checklist de "pronto".
 4. Entrega o relatório: nota por lei, as 5 mudanças de maior impacto e uma proposta de título, subtítulo e botão.
-5. Pergunta se você quer parar no diagnóstico ou escolher as mudanças (no máximo 5 por rodada).
+5. Se o seu pedido já autoriza mudanças específicas, pula esta etapa e aplica só o autorizado. Caso contrário, pergunta se você quer parar no diagnóstico ou escolher as mudanças (no máximo 5 por rodada).
 6. Aplica só o que você aprovou, com backup antes de cada edição, e valida com prints de antes e depois.
 7. Devolve um checklist com o que foi feito, o que está pendente, o que depende de você e o que foi recusado.
 
