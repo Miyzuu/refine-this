@@ -20,13 +20,14 @@ Exceção: se um destes itens já faz parte da identidade da marca (ex.: o roxo 
 - **Inventar números, métricas, selos ou prêmios.**
 - **Sem prova real ainda,** deixe um espaço marcado como `[PREENCHER COM DEPOIMENTO REAL]` e explique o que coletar: nome, cargo ou cidade, foto com autorização e uma frase sobre o resultado concreto.
 
-## Checklist obrigatório antes de considerar o site pronto
-- [ ] **Domínio próprio conectado.** Depende do usuário.
+## Checklist de publicação
+Estes itens não bloqueiam o refinamento de design. Marque só os que se aplicam ao site (ex.: termos e CNPJ só valem se o site cobra ou vende; o domínio só se o site vai ao ar).
+- [ ] **Domínio próprio conectado.** Depende do usuário; aplica-se só se o site vai ao ar.
 - [ ] **Favicon** (o ícone da aba), também em 180×180 para `apple-touch-icon`.
 - [ ] **Nenhuma etiqueta ou selo** "feito com IA" ou do construtor do site.
 - [ ] **Página de política de privacidade.** No Brasil, segue a LGPD (Lei 13.709/2018) e informa quais dados são coletados, para quê, por quanto tempo e como pedir a exclusão.
-- [ ] **Página de termos de uso.**
-- [ ] **Dados de contato e CNPJ ou CPF no rodapé.** Depende do usuário: use `[PREENCHER]` e não invente.
+- [ ] **Página de termos de uso.** Aplica-se se o site coleta dados, vende ou tem cadastro.
+- [ ] **Dados de contato e CNPJ ou CPF no rodapé.** Aplica-se se o site é de um negócio ou vende. Depende do usuário: use `[PREENCHER]` e não invente.
 - [ ] **Testado no celular e no computador.** Prints do Playwright em 375, 768 e 1440px.
 
 Textos legais (privacidade e termos) são um modelo inicial. Avise o usuário para revisar com um profissional.

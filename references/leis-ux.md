@@ -29,6 +29,7 @@ Use sempre esta régua, para que dois avaliadores cheguem à mesma nota:
 | **0** | O problema impede a ação principal. |
 
 - Notas intermediárias são permitidas quando o caso fica entre duas linhas da régua.
+- **Não verificado:** use quando não foi possível checar a lei (ex.: sem navegador para ver o site em celular). Nunca dê nota para algo que não foi visto.
 - Toda nota cita a evidência: um print ou um trecho do código.
 - Se a lei não se aplica ao site (ex.: Zeigarnik numa página sem etapas), escreva "não se aplica" em vez de dar nota.
 - Os números da tabela acima (7±2 itens, 400ms, 5 a 7 itens de menu) são pontos de partida, não limites rígidos. Pese também familiaridade, organização e contexto.

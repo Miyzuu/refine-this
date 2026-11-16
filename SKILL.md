@@ -32,8 +32,8 @@ No Claude Code, os comandos estão no README.
 
 ## Regras fixas
 
-1. **Nada muda sem aprovação explícita do usuário.** Entregue uma etapa por vez e espere o "sim" antes de seguir.
-2. **Toda sugestão cita a lei de UX que a justifica** (ver [references/leis-ux.md](references/leis-ux.md)). Exemplo: "Lei de Hick: menu de 9 para 5 itens, menos tempo para decidir".
+1. **Nada muda sem aprovação.** Se o pedido já autoriza mudanças específicas (ex.: "aplique o título que você propôs"), aplique só essas, sem perguntar de novo. Tudo além do pedido precisa de "sim" antes. Entregue uma etapa por vez.
+2. **Sugestões citam a lei de UX que as justifica** (ver [references/leis-ux.md](references/leis-ux.md)). Exemplo: "Lei de Hick: menu de 9 para 5 itens, menos tempo para decidir". Quando não houver lei correspondente (ex.: marca, texto legal, segurança), diga "sem lei: [motivo]" em vez de inventar uma.
 3. **Siga as regras de design, de texto e de credibilidade** de [references/regras.md](references/regras.md) em toda proposta e em todo código. Não invente funcionalidades. Se faltar informação, pergunte.
 4. **Preserve** marca, identidade visual e funcionalidades existentes, a menos que o usuário aprove a mudança.
 5. **Se o site não abrir ou o navegador falhar,** avise e pergunte como seguir. Não suponha.
