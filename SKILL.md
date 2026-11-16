@@ -81,12 +81,13 @@ No máximo 5 mudanças por rodada. Faça uma pergunta de múltipla escolha para 
 
 ### 5. Aplicar e validar
 1. Aplique **só** o que foi aprovado, uma mudança ou um lote pequeno por vez.
-2. Antes de editar um arquivo, guarde uma cópia em `refine-this/backup/`, mesmo com git. Assim, desfazer é sempre possível.
+2. **Backup por rodada.** Antes da primeira edição de cada rodada, crie `refine-this/backup/<AAAA-MM-DD-HHMM>/`. Copie cada arquivo que vai mudar mantendo o caminho relativo ao projeto (ex.: `src/components/Hero.tsx`). Liste tudo em `manifest.txt`. Nunca sobrescreva: se a pasta já existir, use outro sufixo. A restauração vale para os arquivos do `manifest.txt`; arquivos criados ou apagados fora da skill não estão cobertos.
 3. Siga a ordem de passes do unslop (espaçamento, cor, ícones, texto, tipografia, layout, detalhes, visuais, movimento) dentro do que foi aprovado.
-4. Valide com o Playwright:
-   - prints **depois** nas 3 larguras, em `refine-this/depois/`
-   - console sem erros novos
-   - links e interações principais funcionando
+4. Valide cada mudança aplicada:
+   - **Repita os critérios afetados.** Se a mudança tocou botões, repita alvo de toque, contraste e teclado. Se tocou formulário ou erro, repita rótulos e mensagens de erro. Se tocou layout, repita os 3 tamanhos.
+   - **Playwright:** prints **depois** nas 3 larguras em `refine-this/depois/`, console sem erros novos, links e interações principais funcionando.
+   - **Checks do projeto:** se existirem scripts de lint, typecheck, testes ou build (no `package.json` ou equivalente), rode os que se aplicam e registre o resultado de cada um, inclusive as falhas.
+   - Sem ferramenta para algum check, marque como "não executado". Nunca como "passou".
 5. Confira se o resultado continua fiel ao pedido original. Se divergir, avise e proponha a correção no formato da etapa 4.
 
 ### 6. Entrega final
