@@ -1,6 +1,6 @@
 ---
 name: refine-this
-description: Melhora o design e a UX/UI de um site existente sem deixar cara de template ou de "design de IA". Avalia o site pelas 12 leis de UX, roda a skill unslop, consulta a documentação atual pelo Context7, valida cada mudança com o Playwright em desktop, tablet e celular, e só altera algo depois que o usuário aprova. Funciona também sem essas dependências. Use quando pedirem para refinar, polir, revisar ou melhorar o design, a UX ou a UI de um site ou landing page.
+description: Melhora o design e a UX/UI de um site existente sem deixar cara de template ou de "design de IA". Avalia o site pelas 12 leis de UX, roda a skill unslop, consulta a documentação atual pelo Context7, valida cada mudança com o Playwright em desktop, tablet e celular, e só altera algo depois que o usuário aprova. Funciona em qualquer agente de código, com ou sem essas dependências. Use quando pedirem para refinar, polir, revisar ou melhorar o design, a UX ou a UI de um site ou landing page.
 ---
 
 # refine-this
@@ -14,15 +14,15 @@ Toda vez, confira quais ferramentas existem nesta sessão. Se faltar alguma, avi
 - **Instalar o que falta (Recomendado):** mostre os comandos abaixo e espere a confirmação.
 - **Rodar sem dependências:** siga no modo sem dependências.
 
-Fora do Claude Code, não use os comandos `/plugin`. Procure ferramentas equivalentes (servidor MCP de navegador ou de documentação) e diga quais achou.
+Use as ferramentas que o seu agente oferece. Se ele não tiver os plugins com esse nome, procure equivalentes (um servidor MCP de navegador e um de documentação) e diga quais achou.
 
 | Ferramenta | Para quê | Como instalar |
 |---|---|---|
-| Plugin **Playwright** | abrir o site, tirar prints, ler o console, clicar | `/plugin install playwright@claude-plugins-official` |
-| Plugin **Context7** | documentação atual do framework antes de escrever código | `/plugin install context7@claude-plugins-official` |
-| Skill **unslop** | achar e corrigir padrões genéricos de "design de IA" | `git clone https://github.com/heydamir/unslop` e copiar `unslop/skills/unslop` para `~/.claude/skills/` |
+| **Playwright** (navegador) | abrir o site, tirar prints, ler o console, clicar | pelo marketplace de plugins ou servidor MCP do seu agente |
+| **Context7** (documentação) | documentação atual do framework antes de escrever código | pelo marketplace de plugins ou servidor MCP do seu agente |
+| **unslop** (skill) | achar e corrigir padrões genéricos de "design de IA" | `git clone https://github.com/heydamir/unslop` e copiar `unslop/skills/unslop` para a pasta de skills do seu agente |
 
-Se o marketplace oficial não aparecer, adicione-o antes com `/plugin marketplace add anthropics/claude-plugins-official`. Plugins novos só carregam depois de reiniciar o Claude Code.
+No Claude Code, os comandos estão no README.
 
 ### Modo sem dependências
 - **Sem Playwright:** use qualquer navegador disponível na sessão. Sem nenhum, revise só o código e marque cada item como "não validado visualmente".

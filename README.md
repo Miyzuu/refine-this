@@ -1,35 +1,39 @@
 # refine-this
 
-Skill do [Claude Code](https://claude.com/claude-code) que melhora o design e a UX/UI de um site existente sem deixar cara de template ou de "design de IA".
+Skill para agentes de código (Claude Code, Codex, Cursor, Copilot, entre outros) que melhora o design e a UX/UI de um site existente sem deixar cara de template ou de "design de IA".
+
+Ela é escrita em Markdown puro, então funciona em qualquer agente que lê instruções de arquivo. Foi testada até agora só no Claude Code.
 
 - Avalia o site pelas 12 leis de UX; cada lei recebe uma nota de 0 a 10 por uma régua fixa, com evidência e a correção exata.
-- Confere acessibilidade:
-  - contraste e alvo de toque (WCAG 2.2 AA)
-  - teclado e foco visível
-  - nomes acessíveis e HTML semântico
-  - mensagens de erro
-- Usa a skill [unslop](https://github.com/heydamir/unslop) para achar padrões genéricos de "design de IA", sem tratar como erro o que já é identidade da marca.
-- Consulta a documentação atual do framework pelo Context7 antes de escrever código.
-- Valida cada mudança com o Playwright em 1440, 768 e 375px, com prints de antes e depois.
-- **Só altera algo depois que você aprova**, escolhendo entre opções de múltipla escolha. Também dá para parar só no diagnóstico.
+- Confere acessibilidade: contraste e alvo de toque (WCAG 2.2 AA), teclado e foco visível, nomes acessíveis, HTML semântico e mensagens de erro.
+- Usa o unslop para achar padrões genéricos de "design de IA", sem tratar como erro o que já é identidade da marca.
+- Consulta a documentação atual do framework antes de escrever código, quando o agente tiver uma ferramenta para isso.
+- Valida cada mudança no navegador em 1440, 768 e 375px, com prints de antes e depois.
+- **Só altera algo depois que você aprova**, escolhendo entre opções. Também dá para parar só no diagnóstico.
 - Não inventa depoimentos, números nem clientes. Não mexe em `.env` nem em segredos, e não roda comandos destrutivos.
 
 ## Instalação
 
-```bash
-git clone https://github.com/Miyzuu/refine-this ~/.claude/skills/refine-this
-```
+1. Copie a pasta `refine-this` para a pasta de skills do seu agente.
 
-Para atualizar depois: `git -C ~/.claude/skills/refine-this pull`.
+   No Claude Code:
 
-### Dependências recomendadas (opcionais)
+   ```bash
+   git clone https://github.com/Miyzuu/refine-this ~/.claude/skills/refine-this
+   ```
 
-A skill funciona sem elas, mas fica melhor com elas. Se faltar alguma, ela avisa no começo e pergunta se você quer instalar ou seguir sem. Sem dependências, ela:
+   Em outros agentes, copie a pasta para o local equivalente (ou cole o conteúdo de `SKILL.md` nas instruções do agente, como `AGENTS.md`, regras do Cursor ou instruções do Copilot). Os arquivos de `references/` precisam ficar junto do `SKILL.md`.
+
+2. Para atualizar depois: `git -C <pasta-da-skill> pull`.
+
+### Ferramentas recomendadas (opcionais)
+
+A skill funciona sem elas, mas rende mais com elas. Se faltar alguma, ela avisa no começo e pergunta se você quer instalar ou seguir sem. Sem elas, ela:
 - usa o navegador que houver na sessão, ou só revisa o código, marcando o que não foi validado visualmente;
 - usa a própria lista de padrões no lugar do unslop;
 - lê a documentação instalada junto com os pacotes no lugar do Context7.
 
-Para instalar, dentro do Claude Code:
+Exemplo no Claude Code, dentro do próprio app:
 
 ```
 /plugin marketplace add anthropics/claude-plugins-official
@@ -37,24 +41,28 @@ Para instalar, dentro do Claude Code:
 /plugin install context7@claude-plugins-official
 ```
 
-E a skill unslop, no terminal:
+E o unslop, no terminal:
 
 ```bash
 git clone https://github.com/heydamir/unslop
 cp -r unslop/skills/unslop ~/.claude/skills/
 ```
 
-Reinicie o Claude Code para os plugins carregarem. Fora do Claude Code, a skill procura ferramentas equivalentes, como um servidor MCP de navegador ou de documentação.
+Reinicie o agente depois de instalar os plugins.
 
 ## Uso
+
+No Claude Code:
 
 ```
 /refine-this melhore o design da minha landing page
 ```
 
+Em outros agentes, peça a mesma coisa em linguagem natural e mencione a skill pelo nome.
+
 A skill trabalha nesta ordem:
 
-1. Confere as dependências e avisa se faltar alguma.
+1. Confere as ferramentas e avisa se faltar alguma.
 2. Resume o seu pedido e faz até 5 perguntas sobre o negócio.
 3. Faz o diagnóstico: prints, acessibilidade, unslop, 12 leis de UX e checklist de "pronto".
 4. Entrega o relatório: nota por lei, as 5 mudanças de maior impacto e uma proposta de título, subtítulo e botão.
@@ -66,7 +74,7 @@ Os prints e os backups ficam na pasta `refine-this/` do projeto.
 
 ## Arquivos
 
-- `SKILL.md`: dependências, regras fixas e o fluxo
+- `SKILL.md`: ferramentas, regras fixas e o fluxo
 - `references/leis-ux.md`: as 12 leis de UX, a régua das notas e o formato da avaliação (definições adaptadas de [Laws of UX](https://lawsofux.com), de Jon Yablonski)
 - `references/regras.md`: regras de design, texto e credibilidade, e o checklist antes de publicar
 
