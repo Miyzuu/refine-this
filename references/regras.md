@@ -1,6 +1,8 @@
 # Regras que valem em toda proposta e em todo código
 
 ## Design (nunca faça)
+Exceção: se um destes itens já faz parte da identidade da marca (ex.: o roxo é a cor oficial), ele não é "slop". Mantenha e, no máximo, sugira um refinamento.
+
 - **Gradientes roxos ou azul-roxo genéricos.**
 - **Botões em formato de pílula em todo lugar.** Escolha um formato de botão coerente com a marca e use sempre o mesmo.
 - **Emojis no lugar de ícones.** Use um único conjunto de ícones consistente, como o que o projeto já usa ou Lucide, Phosphor ou Heroicons.

@@ -9,7 +9,12 @@ Deixa um site mais claro, mais fácil de usar e com aparência intencional, semp
 
 ## Antes de começar: dependências
 
-Confira se as três ferramentas estão disponíveis. Se faltar alguma, mostre ao usuário como instalar e pergunte se pode seguir sem ela. Nunca substitua uma por outra sem avisar.
+Toda vez, confira quais ferramentas existem nesta sessão. Se faltar alguma, avise antes de tudo: "Esta skill roda melhor com o plugin Playwright, o plugin Context7 e a skill unslop. Falta: [lista]." Em seguida, pergunte (múltipla escolha):
+
+- **Instalar o que falta (Recomendado):** mostre os comandos abaixo e espere a confirmação.
+- **Rodar sem dependências:** siga no modo sem dependências.
+
+Fora do Claude Code, não use os comandos `/plugin`. Procure ferramentas equivalentes (servidor MCP de navegador ou de documentação) e diga quais achou.
 
 | Ferramenta | Para quê | Como instalar |
 |---|---|---|
@@ -19,18 +24,21 @@ Confira se as três ferramentas estão disponíveis. Se faltar alguma, mostre ao
 
 Se o marketplace oficial não aparecer, adicione-o antes com `/plugin marketplace add anthropics/claude-plugins-official`. Plugins novos só carregam depois de reiniciar o Claude Code.
 
-- **Ferramentas do Playwright:** `browser_navigate`, `browser_resize`, `browser_take_screenshot`, `browser_snapshot`, `browser_console_messages`, `browser_network_requests`, `browser_click` e `browser_evaluate`.
-- **Ferramentas do Context7:** `resolve-library-id` (`libraryName` e `query`), depois `query-docs` (`libraryId` e `query`).
+### Modo sem dependências
+- **Sem Playwright:** use qualquer navegador disponível na sessão. Sem nenhum, revise só o código e marque cada item como "não validado visualmente".
+- **Sem unslop:** use a lista de padrões de [references/regras.md](references/regras.md).
+- **Sem Context7:** leia a versão no `package.json` e a documentação que vem instalada junto com o pacote.
+- **Nunca diga que testou algo que não testou.**
 
 ## Regras fixas
 
 1. **Nada muda sem aprovação explícita do usuário.** Entregue uma etapa por vez e espere o "sim" antes de seguir.
 2. **Toda sugestão cita a lei de UX que a justifica** (ver [references/leis-ux.md](references/leis-ux.md)). Exemplo: "Lei de Hick: menu de 9 para 5 itens, menos tempo para decidir".
-3. **Siga as regras de design, de texto e de credibilidade** de [references/regras.md](references/regras.md). Elas valem em toda proposta e em todo código.
-4. **Não invente** conteúdo, texto, funcionalidade, depoimento, número, selo ou cliente. Se faltar informação, pergunte.
-5. **Preserve** marca, identidade visual e funcionalidades existentes, a menos que o usuário aprove a mudança.
-6. **Se o Playwright falhar ou o site não abrir,** avise e pergunte como seguir. Não suponha.
-7. **Antes de escrever código de um framework ou biblioteca** (Next.js, React, Tailwind etc.), consulte a documentação atual pelo Context7. Confira também a versão no `package.json`.
+3. **Siga as regras de design, de texto e de credibilidade** de [references/regras.md](references/regras.md) em toda proposta e em todo código. Não invente funcionalidades. Se faltar informação, pergunte.
+4. **Preserve** marca, identidade visual e funcionalidades existentes, a menos que o usuário aprove a mudança.
+5. **Se o site não abrir ou o navegador falhar,** avise e pergunte como seguir. Não suponha.
+6. **Antes de escrever código de um framework ou biblioteca** (Next.js, React, Tailwind etc.), consulte a documentação atual pelo Context7. Confira também a versão no `package.json`.
+7. **Segurança:** não leia nem edite `.env`, chaves ou segredos. Não rode comandos destrutivos (apagar arquivos, `git reset --hard`, push forçado).
 8. **Escreva em português, de forma direta e simples.** Faça resumos em checklist.
 
 ## Fluxo
@@ -45,8 +53,11 @@ Se o marketplace oficial não aparecer, adicione-o antes com `/plugin marketplac
    - hierarquia visual
    - contraste (WCAG AA: 4,5:1 para texto normal, 3:1 para texto grande)
    - espaçamento, tipografia e alinhamento
-   - alvos de toque (no mínimo 44×44px)
+   - alvos de toque (mínimo de 24×24px pela WCAG 2.2 AA; recomendado 44×44px)
    - estados de hover, foco e erro
+   - navegação só pelo teclado (Tab, Enter, Esc), com foco sempre visível
+   - nomes acessíveis em botões, ícones e campos; HTML semântico (`header`, `nav`, `main`, `button`, `label`)
+   - mensagens de erro claras, presas ao campo certo
    - erros no console
    - requisições que falham
    - tempo até o conteúdo aparecer
@@ -55,14 +66,13 @@ Se o marketplace oficial não aparecer, adicione-o antes com `/plugin marketplac
 4. **Checklist de "pronto".** Marque o que já existe e o que falta (ver [references/regras.md](references/regras.md)).
 
 ### 3. Relatório
-- **Por lei:** nota de 0 a 10, o problema encontrado (com exemplo do próprio site) e a correção exata: o que mudar, onde e como.
-- **As 5 mudanças de maior impacto,** em ordem de prioridade, começando pelas mais rápidas de fazer.
-- **Lista Alta / Média / Baixa** com o problema e onde ele está, a lei que o justifica e o impacto para quem usa o site.
-- **Proposta de título principal, subtítulo e texto do botão principal,** feita só com informações reais do negócio. É uma proposta, não uma mudança aplicada.
+- **A avaliação das 12 leis,** no formato de [references/leis-ux.md](references/leis-ux.md): nota por lei, as 5 mudanças de maior impacto e a proposta de título, subtítulo e botão.
 - **Padrões genéricos achados pelo unslop.**
 - **Itens do checklist de "pronto" que faltam,** separando o que depende do usuário.
 
 ### 4. Escolha
+Primeiro, pergunte se o usuário quer seguir para as mudanças ou **parar no diagnóstico**. Se ele parar, pule para a entrega final.
+
 No máximo 5 mudanças por rodada. Faça uma pergunta de múltipla escolha para cada uma, com até 4 por vez:
 
 - **A) Manter como está:** prós e contras

@@ -6,7 +6,7 @@ Definições adaptadas de [Laws of UX](https://lawsofux.com), de Jon Yablonski. 
 |---|---|---|---|---|
 | 1 | **Lei de Jakob** | As pessoas passam a maior parte do tempo em outros sites e esperam que o seu funcione igual. | O site segue padrões conhecidos (menu e logo no topo, contato onde se espera)? | Logo no topo à esquerda, levando para a home. Menu no topo (hambúrguer no celular). Contato no menu e no rodapé. |
 | 2 | **Lei de Hick** | Quanto mais opções, mais tempo se leva para decidir. | Quantas opções a pessoa avalia antes de agir? Onde há escolhas demais? | Menu com até 5 a 7 itens. Uma ação principal por seção. Planos destacando um como recomendado. |
-| 3 | **Lei de Fitts** | O tempo para alcançar um alvo depende da distância e do tamanho dele. | O botão principal é grande, fácil de tocar no celular e fica onde o polegar alcança? | Alvo de no mínimo 44×44px. Botão principal largo no celular. Ação principal visível sem rolar ou fixa embaixo. |
+| 3 | **Lei de Fitts** | O tempo para alcançar um alvo depende da distância e do tamanho dele. | O botão principal é grande, fácil de tocar no celular e fica onde o polegar alcança? | Alvo de no mínimo 24×24px (exigência da WCAG 2.2 AA); 44×44px é o recomendado. Botão principal largo no celular. Ação principal visível sem rolar ou fixa embaixo. |
 | 4 | **Lei de Miller** | A memória de curto prazo guarda poucos itens (cerca de 7±2). | As informações estão em blocos pequenos, ou há listas e textos longos demais? | Parágrafos de 2 a 4 linhas. Listas curtas. Agrupar em blocos com subtítulo. |
 | 5 | **Efeito Von Restorff** | Entre itens parecidos, o diferente é o lembrado. | A ação principal se destaca de todo o resto? | Cor de destaque reservada para a ação principal. Botões secundários discretos. |
 | 6 | **Efeito estética-usabilidade** | As pessoas acham mais fácil de usar o que parece bonito. | O visual passa confiança e profissionalismo no primeiro segundo? | Tipografia e espaçamento consistentes, imagens reais, nada quebrado ou desalinhado. |
@@ -17,9 +17,24 @@ Definições adaptadas de [Laws of UX](https://lawsofux.com), de Jon Yablonski. 
 | 11 | **Lei de Tesler** | Toda tarefa tem uma complexidade que não some. Alguém precisa lidar com ela. | O site tira o trabalho do cliente (menos campos, cliques e dúvidas)? | Formulários só com o necessário. Autopreenchimento e máscaras. Respostas a dúvidas comuns perto da ação. |
 | 12 | **Efeito Zeigarnik** | Tarefas incompletas ficam na cabeça e dão vontade de terminar. | Algo incentiva a pessoa a continuar e concluir (etapas, progresso)? | Indicar etapas ("Passo 2 de 3"), barra de progresso, próximo passo sempre visível. |
 
+## Régua das notas
+
+Use sempre esta régua, para que dois avaliadores cheguem à mesma nota:
+
+| Nota | Quando dar |
+|---|---|
+| **10** | Nenhum problema encontrado. |
+| **7** | Problema pequeno, que não atrapalha a ação principal. |
+| **4** | O problema atrapalha o fluxo principal (achar, entender ou clicar na ação). |
+| **0** | O problema impede a ação principal. |
+
+- Notas intermediárias são permitidas quando o caso fica entre duas linhas da régua.
+- Toda nota cita a evidência: um print ou um trecho do código.
+- Se a lei não se aplica ao site (ex.: Zeigarnik numa página sem etapas), escreva "não se aplica" em vez de dar nota.
+- Os números da tabela acima (7±2 itens, 400ms, 5 a 7 itens de menu) são pontos de partida, não limites rígidos. Pese também familiaridade, organização e contexto.
+
 ## Formato da avaliação
 
-- **Para cada lei:** nota de 0 a 10, o problema encontrado (com exemplo do próprio site) e a correção exata: o que mudar, onde e como.
+- **Para cada lei:** nota de 0 a 10 pela régua acima, o problema encontrado (com exemplo do próprio site) e a correção exata: o que mudar, onde e como.
 - **Depois:** as 5 mudanças de maior impacto, em ordem de prioridade, começando pelas mais rápidas de fazer.
 - **Por fim:** uma proposta de título principal, subtítulo e texto do botão principal aplicando essas leis. Use só informações reais do negócio e peça aprovação antes de aplicar.
-- **Seja direto,** use linguagem simples e exemplos do próprio site.

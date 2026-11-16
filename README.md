@@ -7,6 +7,7 @@ Skill do [Claude Code](https://claude.com/claude-code) que melhora o design e a 
 - Consulta a documentação atual do framework pelo Context7 antes de escrever código.
 - Valida cada mudança com o Playwright em 1440, 768 e 375px, com prints de antes e depois.
 - **Só altera algo depois que você aprova**, escolhendo entre opções de múltipla escolha.
+- Funciona sem dependências: se faltar Playwright, Context7 ou unslop, ela avisa e pergunta se você quer instalar ou seguir sem. Também dá para parar só no diagnóstico.
 
 ## Instalação
 
