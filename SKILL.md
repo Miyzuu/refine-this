@@ -71,7 +71,9 @@ No Claude Code, os comandos estão no README.
 - **Itens do checklist de "pronto" que faltam,** separando o que depende do usuário.
 
 ### 4. Escolha
-Primeiro, pergunte se o usuário quer seguir para as mudanças ou **parar no diagnóstico**. Se ele parar, pule para a entrega final.
+Se o pedido já autoriza mudanças específicas, **pule esta etapa**: não pergunte se pode seguir nem apresente alternativas. Aplique só o autorizado e siga para a etapa 5.
+
+Caso contrário, pergunte primeiro se o usuário quer seguir para as mudanças ou **parar no diagnóstico**. Se ele parar, pule para a entrega final.
 
 No máximo 5 mudanças por rodada. Faça uma pergunta de múltipla escolha para cada uma, com até 4 por vez:
 
